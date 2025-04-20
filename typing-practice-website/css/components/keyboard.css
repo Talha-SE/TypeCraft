@@ -1,0 +1,85 @@
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    gap: 5px;
+    margin: 20px auto;
+    max-width: 800px;
+    user-select: none;
+}
+
+.key {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    transition: background-color 0.2s, transform 0.1s;
+    cursor: default;
+}
+
+.key:active {
+    background-color: #d0d0d0;
+    transform: scale(0.95);
+}
+
+.key.disabled {
+    background-color: #e0e0e0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.key.highlight {
+    background-color: #a0e0a0;
+    border-color: #4caf50;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.key.error {
+    background-color: #e0a0a0;
+    border-color: #f44336;
+    animation: shake 0.3s ease-in-out;
+}
+
+.key.wide {
+    grid-column: span 2;
+}
+
+.key.long {
+    grid-column: span 3;
+}
+
+.key.space {
+    grid-column: span 5;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Dark theme for keyboard */
+.dark-theme .key {
+    background-color: #333;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+.dark-theme .key.highlight {
+    background-color: #2c662c;
+    border-color: #4caf50;
+}
+
+.dark-theme .key.error {
+    background-color: #662c2c;
+    border-color: #f44336;
+}

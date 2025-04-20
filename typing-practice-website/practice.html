@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Practice</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components/keyboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.svg" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="practice.html" class="active">Practice</a></li>
+                <li><a href="stats.html">Stats</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="typing-practice">
+            <h1>Typing Practice</h1>
+            
+            <div class="settings-panel">
+                <div class="setting">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="setting">
+                    <label for="theme">Theme:</label>
+                    <select id="theme">
+                        <option value="light" selected>Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="solarized">Solarized</option>
+                    </select>
+                </div>
+                <div class="setting">
+                    <label for="textType">Text Type:</label>
+                    <select id="textType">
+                        <option value="common" selected>Common Words</option>
+                        <option value="quotes">Famous Quotes</option>
+                        <option value="code">Code Snippets</option>
+                        <option value="numbers">Numbers & Symbols</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="metrics-display">
+                <div class="metric">
+                    <span id="wpm-display">0</span>
+                    <label>WPM</label>
+                </div>
+                <div class="metric">
+                    <span id="accuracy-display">100%</span>
+                    <label>Accuracy</label>
+                </div>
+                <div class="metric">
+                    <span id="timer-display">0:00</span>
+                    <label>Time</label>
+                </div>
+                <div class="metric">
+                    <span id="errors-display">0</span>
+                    <label>Errors</label>
+                </div>
+            </div>
+
+            <div class="text-display" id="text-to-type">
+                <!-- Characters will be generated here -->
+            </div>
+            
+            <input type="text" id="user-input" placeholder="Start typing..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            
+            <div class="keyboard-container" id="virtual-keyboard">
+                <!-- On-screen keyboard will be generated here -->
+            </div>
+            
+            <div class="controls">
+                <button id="start-test" class="primary-btn">Start Test</button>
+                <button id="reset-test" class="secondary-btn">Reset</button>
+                <button id="new-text" class="secondary-btn">New Text</button>
+            </div>
+            
+            <div class="results" id="results-panel">
+                <!-- Results will appear here after test completion -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Typing Practice Website. All rights reserved.</p>
+    </footer>
+
+    <script src="js/utils/text-generator.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/typing-test.js"></script>
+</body>
+</html>
