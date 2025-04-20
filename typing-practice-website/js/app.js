@@ -2,6 +2,16 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+    
+    const themeSelector = document.getElementById('theme');
+    
+    // Apply initial theme
+    applyTheme(themeSelector.value);
+    
+    // Listen for theme changes
+    themeSelector.addEventListener('change', function() {
+        applyTheme(this.value);
+    });
 });
 
 function initializeApp() {
@@ -54,6 +64,14 @@ function openModal(modalId) {
             modal.classList.remove('is-active');
         });
     }
+}
+
+function applyTheme(theme) {
+    // Remove all theme classes
+    document.body.classList.remove('light-theme', 'dark-theme', 'solarized-theme');
+    
+    // Add selected theme class
+    document.body.classList.add(`${theme}-theme`);
 }
 
 // Additional functions can be added here for other global functionalities
